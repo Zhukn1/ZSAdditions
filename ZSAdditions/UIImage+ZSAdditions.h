@@ -1,5 +1,5 @@
 //
-//  UIImage+ZHAdditions.m
+//  UIImage+ZSAdditions.m
 //
 //
 //  Created by Stas Zhukovskiy on 22.01.14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (ZHAdditions)
+@interface UIImage (ZSAdditions)
 
 + (UIImage*)imageFromView:(UIView*)view;
 + (UIImage*)imageFromView:(UIView*)view scaledToSize:(CGSize)newSize;
