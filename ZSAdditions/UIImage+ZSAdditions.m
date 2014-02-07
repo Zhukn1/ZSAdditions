@@ -1,14 +1,14 @@
 //
-//  UIImage+ZHAdditions.m
+//  UIImage+ZSAdditions.m
 //
 //
 //  Created by Stas Zhukovskiy on 22.01.14.
 //  Copyright (c) 2014 Stas Zhukovskiy.
 //
 
-#import "UIImage+ZHAdditions.h"
+#import "UIImage+ZSAdditions.h"
 
-@implementation UIImage (ZHAdditions)
+@implementation UIImage (ZSAdditions)
 
 + (void)beginImageContextWithSize:(CGSize)size {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
