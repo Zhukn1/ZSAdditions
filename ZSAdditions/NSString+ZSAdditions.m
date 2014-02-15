@@ -23,4 +23,16 @@
     return foundCount;
 }
 
++ (NSString *)convertSecondsToMinutes:(int)totalSeconds {
+    int seconds = totalSeconds % 60;
+    int minutes = (totalSeconds / 60) % 60;
+    int hours = totalSeconds / 3600;
+    NSString *result = @"";
+    if (hours > 0)
+        result = [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
+    else
+        result = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+    return result;
+}
+
 @end
