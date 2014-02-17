@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Stas Zhukovskiy. All rights reserved.
 //
 
-#import "ZSAdditions/UIImage+ZSAdditions.h"
+#import "UIImage+ZSAdditions.h"
 
-#import "ZSAdditions/NSArray+ZSAdditions.h"
-#import "ZSAdditions/NSMutableArray+ZSAdditions.h"
-#import "ZSAdditions/NSString+ZSAdditions.h"
+#import "NSArray+ZSAdditions.h"
+#import "NSMutableArray+ZSAdditions.h"
+#import "NSString+ZSAdditions.h"
