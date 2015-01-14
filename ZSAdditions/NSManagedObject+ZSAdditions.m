@@ -20,9 +20,9 @@
     return object;
 }
 
-+ (instancetype)newAllInstancesFetchRequest {
-    id object = [[NSFetchRequest alloc] initWithEntityName:[self entityName]];
-    return object;
++ (NSFetchRequest *)newAllInstancesFetchRequest {
+    NSFetchRequest *fetchRequset = [[NSFetchRequest alloc] initWithEntityName:[self entityName]];
+    return fetchRequset;
 }
 
 @end
