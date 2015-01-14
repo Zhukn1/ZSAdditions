@@ -12,5 +12,6 @@
 
 + (NSString *)entityName;
 + (instancetype)newInstanceInManagedObjectContext:(NSManagedObjectContext *)context;
++ (instancetype)newAllInstancesFetchRequest;
 
 @end
