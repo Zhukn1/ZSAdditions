@@ -1,0 +1,14 @@
+PODS:
+  - ZSAdditions (0.1.0)
+
+DEPENDENCIES:
+  - ZSAdditions (from `../`)
+
+EXTERNAL SOURCES:
+  ZSAdditions:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ZSAdditions: fae8bfbe914a068a33c00d89c244e6b5e11f95d0
+
+COCOAPODS: 0.35.0

@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+
+target 'ZSAdditions', :exclusive => true do
+  pod "ZSAdditions", :path => "../"
+
+  
+end
