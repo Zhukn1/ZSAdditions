@@ -13,5 +13,6 @@
 + (NSString *)entityName;
 + (instancetype)newInstanceInManagedObjectContext:(NSManagedObjectContext *)context;
 + (NSFetchRequest *)newAllInstancesFetchRequest;
++ (void)cleanupAllInstancesInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

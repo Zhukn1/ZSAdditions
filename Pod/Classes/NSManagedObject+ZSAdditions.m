@@ -25,4 +25,19 @@
     return fetchRequset;
 }
 
++ (void)cleanupAllInstancesInManagedObjectContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *fetchRequest  = [self newAllInstancesFetchRequest];
+    [fetchRequest setIncludesPropertyValues:NO];
+    
+    NSError *error      = nil;
+    NSArray *entities   = [context executeFetchRequest:fetchRequest
+                                                 error:&error];
+    for (id object in entities) {
+        [context deleteObject:object];
+    }
+    
+    NSError *saveError  = nil;
+    [context save:&saveError];
+}
+
 @end
