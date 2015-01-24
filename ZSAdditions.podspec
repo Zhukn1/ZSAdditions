@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/Zhukn1/ZSAdditions'
   s.license      = { :type => 'MIT', :file => 'FILE_LICENSE' }
   s.platform     = :ios, '8.0'
-  s.source       = { :git => 'https://github.com/Zhukn1/ZSAdditions.git', :tag => '0.0.2' }
+  s.source       = { :git => 'https://github.com/Zhukn1/ZSAdditions.git' }
   s.source_files = 'Pod/Classes/ZSAdditions.{h,m}'
   s.requires_arc = true
   s.author       = { 'Stas Zhukovskiy' => 'stzhuk@gmail.com' }
