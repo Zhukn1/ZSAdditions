@@ -35,4 +35,8 @@
     return result;
 }
 
++ (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 @end
