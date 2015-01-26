@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version      = '0.0.7'
   s.summary      = 'Personal categories to make iOS life easier.'
   s.homepage     = 'https://github.com/Zhukn1/ZSAdditions'
-  s.license      = { :type => 'MIT', :file => 'FILE_LICENSE' }
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.platform     = :ios, '7.0'
   s.source       = { :git => 'https://github.com/Zhukn1/ZSAdditions.git', :tag => s.version.to_s }
   s.source_files = 'Pod/Classes/*.{h,m}'
