@@ -10,7 +10,7 @@
 
 @implementation NSString (ZSAdditions)
 
-+ (NSInteger)countOccurencesOfString:(NSString *)stringToCount inString:(NSString *)text {
+- (NSInteger)countOccurencesOfString:(NSString *)stringToCount inString:(NSString *)text {
     
     NSInteger foundCount = 0;
     NSRange range = NSMakeRange(0, text.length);
@@ -24,7 +24,7 @@
     return foundCount;
 }
 
-+ (NSString *)convertSecondsToMinutes:(int)totalSeconds {
+- (NSString *)convertSecondsToMinutes:(int)totalSeconds {
     
     int seconds = totalSeconds % 60;
     int minutes = (totalSeconds / 60) % 60;
@@ -37,12 +37,12 @@
     return result;
 }
 
-+ (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters {
+- (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters {
     
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-+ (NSString *)formatRubPriceToString:(NSInteger)value {
+- (NSString *)formatRubPriceToString:(NSInteger)value {
     
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];

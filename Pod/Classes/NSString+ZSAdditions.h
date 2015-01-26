@@ -10,9 +10,9 @@
 
 @interface NSString (ZSAdditions)
 
-+ (NSInteger)countOccurencesOfString:(NSString *)stringToCount inString:(NSString *)text;
-+ (NSString *)convertSecondsToMinutes:(int)totalSeconds;
-+ (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters;
-+ (NSString *)formatRubPriceToString:(NSInteger)value;
+- (NSInteger)countOccurencesOfString:(NSString *)stringToCount inString:(NSString *)text;
+- (NSString *)convertSecondsToMinutes:(int)totalSeconds;
+- (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters;
+- (NSString *)formatRubPriceToString:(NSInteger)value;
 
 @end
