@@ -14,3 +14,4 @@
 #import "NSManagedObject+ZSAdditions.h"
 #import "NSString+ZSAdditions.h"
 #import "UIImage+ZSAdditions.h"
+#import "UITableViewCell+ZSAdditions.h"
