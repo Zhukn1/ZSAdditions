@@ -14,7 +14,7 @@
 	if (self.count == 0)
 	    return nil;
 	
-	return self[arc4random_uniform(self.count)];
+	return self[arc4random_uniform((int)self.count)];
 }
 
 @end

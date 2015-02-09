@@ -15,7 +15,7 @@
 }
 
 - (void)shuffleArray {
-    for (int i = (self.count - 1); i >= 1; --i) {
+    for (int i = ((int)self.count - 1); i >= 1; --i) {
         int j = arc4random() % i;
         id tempObject = self[j];
         [self replaceObjectAtIndex:j withObject:self[i]];
