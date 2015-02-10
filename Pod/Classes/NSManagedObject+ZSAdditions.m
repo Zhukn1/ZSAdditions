@@ -27,17 +27,15 @@
 
 + (void)cleanupAllInstancesInManagedObjectContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest  = [self newAllInstancesFetchRequest];
-    [fetchRequest setIncludesPropertyValues:NO];
-    
-    NSError *error      = nil;
-    NSArray *entities   = [context executeFetchRequest:fetchRequest
-                                                 error:&error];
-    for (id object in entities) {
-        [context deleteObject:object];
+    fetchRequest.resultType 	  = NSManagedObjectIDResultType;
+    NSArray *entities  			  = [context executeFetchRequest:fetchRequest
+                                               			   error:NULL];
+    for (NSManagedObjectID *objID in entities) {
+    	NSManagedObject *obj = [context objectWithID:objID];
+        [context deleteObject:obj];
     }
     
-    NSError *saveError  = nil;
-    [context save:&saveError];
+    [context save:NULL];
 }
 
 @end
