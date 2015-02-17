@@ -42,6 +42,11 @@
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (NSString *)stringByTrimmingWhitespaces {
+    
+    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+
 - (NSString *)formatRubPriceToString:(NSInteger)value {
     
     NSNumberFormatter *formatter = [NSNumberFormatter new];
