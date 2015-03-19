@@ -27,16 +27,16 @@
     return [gregorian dateFromComponents:normalized];
 }
 
-- (NSDate *)toLocalTime:(NSDate *)someDate {
+- (NSDate *)toLocalTime {
     NSTimeZone *timeZone    = [NSTimeZone defaultTimeZone];
-    NSInteger seconds       = [timeZone secondsFromGMTForDate:someDate];
-    return [NSDate dateWithTimeInterval:seconds sinceDate:someDate];
+    NSInteger seconds       = [timeZone secondsFromGMTForDate:self];
+    return [NSDate dateWithTimeInterval:seconds sinceDate:self];
 }
 
-- (NSDate *)toGlobalTime:(NSDate *)someDate {
+- (NSDate *)toGlobalTime {
     NSTimeZone *timeZone    = [NSTimeZone defaultTimeZone];
-    NSInteger seconds       = -[timeZone secondsFromGMTForDate:someDate];
-    return [NSDate dateWithTimeInterval:seconds sinceDate:someDate];
+    NSInteger seconds       = -[timeZone secondsFromGMTForDate:self];
+    return [NSDate dateWithTimeInterval:seconds sinceDate:self];
 }
 
 @end
