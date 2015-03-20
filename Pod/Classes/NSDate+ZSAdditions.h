@@ -8,7 +8,7 @@
 
 @interface NSDate (ZSAdditions)
 
-- (NSDate *)normalizedDate:(NSDate *)date;
++ (NSDate *)normalizedDate:(NSDate *)date;
 - (NSDate *)toLocalTime;
 - (NSDate *)toGlobalTime;
 

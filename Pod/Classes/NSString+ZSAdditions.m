@@ -10,11 +10,14 @@
 
 @implementation NSString (ZSAdditions)
 
-- (NSInteger)countOccurencesOfString:(NSString *)stringToCount inString:(NSString *)text {
++ (NSInteger)countOccurencesOfString:(NSString *)stringToCount inString:(NSString *)text {
     
-    NSInteger foundCount = 0;
-    NSRange range = NSMakeRange(0, text.length);
-    range = [text rangeOfString:stringToCount options:NSCaseInsensitiveSearch range:range locale:nil];
+    NSInteger foundCount    = 0;
+    NSRange range           = NSMakeRange(0, text.length);
+    range                   = [text rangeOfString:stringToCount
+                                          options:NSCaseInsensitiveSearch
+                                            range:range
+                                           locale:nil];
     while (range.location != NSNotFound) {
         foundCount ++;
         range = NSMakeRange(range.location + range.length, text.length - (range.location + range.length));
@@ -24,16 +27,18 @@
     return foundCount;
 }
 
-- (NSString *)convertSecondsToMinutes:(int)totalSeconds {
++ (NSString *)convertSecondsToMinutes:(int)totalSeconds {
     
-    int seconds = totalSeconds % 60;
-    int minutes = (totalSeconds / 60) % 60;
-    int hours = totalSeconds / 3600;
-    NSString *result = @"";
-    if (hours > 0)
+    int seconds         = totalSeconds % 60;
+    int minutes         = (totalSeconds / 60) % 60;
+    int hours           = totalSeconds / 3600;
+    NSString *result    = @"";
+    
+    if (hours > 0) {
         result = [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
-    else
+    } else {
         result = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+    }
     return result;
 }
 
@@ -47,7 +52,7 @@
     return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
-- (NSString *)formatRubPriceToString:(NSInteger)value {
++ (NSString *)formatRubPriceToString:(NSInteger)value {
     
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];

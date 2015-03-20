@@ -10,7 +10,7 @@
 
 @implementation NSDate (ZSAdditions)
 
-- (NSDate *)normalizedDate:(NSDate *)date {
++ (NSDate *)normalizedDate:(NSDate *)date {
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     [gregorian setTimeZone:[NSTimeZone localTimeZone]];
