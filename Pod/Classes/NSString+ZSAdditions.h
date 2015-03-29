@@ -15,5 +15,9 @@
 - (NSString *)stringByTrimmingWhitespaceAndNewlineCharacters;
 - (NSString *)stringByTrimmingWhitespaces;
 + (NSString *)formatRubPriceToString:(NSInteger)value;
++ (NSString *)plurableForInteger:(NSInteger)count
+         withStringForNumberFive:(NSString *)first
+              stringForNumberTwo:(NSString *)second
+           andStringForNumberOne:(NSString *)third;
 
 @end

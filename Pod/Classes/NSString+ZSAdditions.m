@@ -65,4 +65,34 @@
     return result;
 }
 
++ (NSString *)plurableForInteger:(NSInteger)count
+         withStringForNumberFive:(NSString *)first
+              stringForNumberTwo:(NSString *)second
+           andStringForNumberOne:(NSString *)third {
+    
+    NSString *plurableStr = @"";
+    
+    int XY  = (int)floor(count) % 100;
+    int Y   = (int)floor(count) % 10;
+    
+    if (Y == 0 || Y > 4 || (XY > 10 && XY < 15)) {
+        plurableStr = first;
+    }
+    
+    if (Y > 1 && Y < 5 && (XY < 10 || XY > 20)) {
+        plurableStr = second;
+    }
+    
+    if (Y == 1 && XY != 11) {
+        plurableStr = third;
+    }
+    
+    NSNumberFormatter *formatter    = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setGroupingSeparator:@" "];
+    NSString *countStr              = [formatter stringFromNumber:@(count)];
+    
+    return [NSString stringWithFormat:@"%@ %@", countStr, plurableStr];
+}
+
 @end
