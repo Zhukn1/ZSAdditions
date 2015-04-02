@@ -1,6 +1,6 @@
 //
 //  NSManagedObject+ZSAdditions.m
-//
+//  ZSAdditions
 //
 //  Created by Stas Zhukovskiy on 12.01.15.
 //  Copyright (c) 2015 Stas Zhukovskiy. All rights reserved.

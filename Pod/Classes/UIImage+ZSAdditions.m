@@ -1,9 +1,9 @@
 //
 //  UIImage+ZSAdditions.m
-//
+//  ZSAdditions
 //
 //  Created by Stas Zhukovskiy on 22.01.14.
-//  Copyright (c) 2014 Stas Zhukovskiy.
+//  Copyright (c) 2015 Stas Zhukovskiy. All rights reserved.
 //
 
 #import "UIImage+ZSAdditions.h"

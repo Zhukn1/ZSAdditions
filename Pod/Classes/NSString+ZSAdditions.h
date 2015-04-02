@@ -1,9 +1,9 @@
 //
 //  NSString+ZSAdditions.h
-//  
+//  ZSAdditions
 //
 //  Created by Stanislav Zhukovskiy on 05.02.14.
-//  Copyright (c) 2014 Stas Zhukovskiy. All rights reserved.
+//  Copyright (c) 2015 Stas Zhukovskiy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
