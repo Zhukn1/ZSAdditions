@@ -15,5 +15,6 @@
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 + (UIImage *)cropBiggestCenteredSquareImageFromImage:(UIImage *)image withSide:(CGFloat)side;
 + (void)beginImageContextWithSize:(CGSize)size;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 @end

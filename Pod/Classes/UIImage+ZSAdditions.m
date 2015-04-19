@@ -11,13 +11,18 @@
 @implementation UIImage (ZSAdditions)
 
 + (void)beginImageContextWithSize:(CGSize)size {
+   
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-        if ([[UIScreen mainScreen] scale] == 2.0)
+        if ([[UIScreen mainScreen] scale] == 2.0) {
             UIGraphicsBeginImageContextWithOptions(size, YES, 2.0);
-        else
+        }
+        else {
             UIGraphicsBeginImageContext(size);
-    } else
+        }
+    }
+    else {
         UIGraphicsBeginImageContext(size);
+    }
 }
 
 + (void)endImageContext {
@@ -25,6 +30,7 @@
 }
 
 + (UIImage *)imageFromView:(UIView *)view {
+   
     [self beginImageContextWithSize:[view bounds].size];
     BOOL hidden = [view isHidden];
     [view setHidden:NO];
@@ -36,13 +42,18 @@
 }
 
 + (UIImage *)imageFromView:(UIView *)view scaledToSize:(CGSize)newSize {
-    UIImage *image = [self imageFromView:view];
-    if ([view bounds].size.width != newSize.width || [view bounds].size.height != newSize.height)
+  
+    UIImage *image          = [self imageFromView:view];
+    BOOL widthIsDifferent   = [view bounds].size.width != newSize.width;
+    BOOL heightIsDifferent  = [view bounds].size.height != newSize.height;
+    if (widthIsDifferent || heightIsDifferent) {
         image = [self imageWithImage:image scaledToSize:newSize];
+    }
     return image;
 }
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+   
     [self beginImageContextWithSize:newSize];
     [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -51,10 +62,15 @@
 }
 
 + (UIImage *)cropBiggestCenteredSquareImageFromImage:(UIImage *)image withSide:(CGFloat)side {
+    
     // Get size of current image
-    CGSize size = image.size;
-    if(size.width == size.height && size.width == side)
+    CGSize size         = image.size;
+    BOOL isSquare       = size.width == size.height;
+    BOOL correctSize    = size.width == side;
+    if(isSquare && correctSize) {
         return image;
+    }
+    
     CGSize newSize = CGSizeMake(side, side);
     double ratio;
     double delta;
@@ -69,7 +85,8 @@
         ratio = newSize.height / image.size.height;
         delta = ratio*(image.size.width - image.size.height);
         offset = CGPointMake(delta/2, 0);
-    } else {
+    }
+    else {
         ratio = newSize.width / image.size.width;
         delta = ratio*(image.size.height - image.size.width);
         offset = CGPointMake(0, delta/2);
@@ -92,6 +109,25 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    
+    //make image opaque for speed optimization if color has alpha = 1.
+    const CGFloat alpha     = CGColorGetAlpha(color.CGColor);
+    const BOOL opaque       = alpha == 1;
+
+    CGRect rect             = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContextWithOptions(rect.size, opaque, 0);
+    CGContextRef context    = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image          = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end
