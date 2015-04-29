@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'ZSAdditions'
-  s.version      = '0.1.10'
+  s.version      = '0.1.11'
   s.summary      = 'Personal categories to make iOS life easier.'
   s.homepage     = 'https://github.com/Zhukn1/ZSAdditions'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }

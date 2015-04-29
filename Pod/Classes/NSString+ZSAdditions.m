@@ -68,7 +68,8 @@
 + (NSString *)plurableForInteger:(NSInteger)count
          withStringForNumberFive:(NSString *)first
               stringForNumberTwo:(NSString *)second
-           andStringForNumberOne:(NSString *)third {
+           andStringForNumberOne:(NSString *)third
+             showIntegerInResult:(BOOL)showIntger {
     
     NSString *plurableStr = @"";
     
@@ -87,12 +88,22 @@
         plurableStr = third;
     }
     
-    NSNumberFormatter *formatter    = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setGroupingSeparator:@" "];
-    NSString *countStr              = [formatter stringFromNumber:@(count)];
+    NSString *result = @"";
     
-    return [NSString stringWithFormat:@"%@ %@", countStr, plurableStr];
+    if (showIntger) {
+        
+        NSNumberFormatter *formatter    = [NSNumberFormatter new];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setGroupingSeparator:@" "];
+        NSString *countStr              = [formatter stringFromNumber:@(count)];
+        
+        result = [NSString stringWithFormat:@"%@ %@", countStr, plurableStr];
+    }
+    else {
+        result = plurableStr;
+    }
+    
+    return result;
 }
 
 @end
