@@ -11,5 +11,6 @@
 + (NSDate *)normalizedDate:(NSDate *)date;
 - (NSDate *)toLocalTime;
 - (NSDate *)toGlobalTime;
+- (NSString *)monthInGenetiveCaseForRULocale;
 
 @end
