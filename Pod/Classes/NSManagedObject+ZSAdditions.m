@@ -11,7 +11,9 @@
 @implementation NSManagedObject (EntityName)
 
 + (NSString *)entityName {
-    return NSStringFromClass(self);
+    //In Swift the class is returned with the module name prefix so we need to get rid of that.
+    NSString *str = NSStringFromClass(self);
+    return [[str componentsSeparatedByString:@"."] lastObject];
 }
 
 + (instancetype)newInstanceInManagedObjectContext:(NSManagedObjectContext *)context {
