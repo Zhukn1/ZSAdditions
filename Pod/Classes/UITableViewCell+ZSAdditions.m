@@ -11,7 +11,8 @@
 @implementation UITableViewCell (ZSAdditions)
 
 + (NSString *)cellIdentifier {
-    return NSStringFromClass([self class]);
+    NSString *str = NSStringFromClass(self);
+    return [[str componentsSeparatedByString:@"."] lastObject];
 }
 
 @end
