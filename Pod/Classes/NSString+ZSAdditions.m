@@ -56,7 +56,7 @@
     
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setGroupingSeparator:@" "];
+    [formatter setGroupingSeparator:@" "];
     
     NSString *result    = [formatter stringFromNumber:@(value)];
     // \u20BD is the unicode Ruble character.
