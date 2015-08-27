@@ -11,7 +11,8 @@
 @implementation UIViewController (ZSAdditions)
 
 + (NSString *)storyBoardIdentifier {
-    return NSStringFromClass([self class]);
+    NSString *str = NSStringFromClass(self);
+    return [[str componentsSeparatedByString:@"."] lastObject];
 }
 
 @end
